@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Opgave_5_TCP_server</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Opgave 1 Csharp">
+      <HintPath>..\..\..\Opgave 1 C# og Unit tests\Opgave 1 Csharp\Opgave 1 Csharp\bin\Debug\net5.0\Opgave 1 Csharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
