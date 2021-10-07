@@ -39,10 +39,12 @@ namespace Opgave_5_TCP_server
             NetworkStream ns = sockert.GetStream();
             StreamReader reader = new StreamReader(ns);
             StreamWriter writer = new StreamWriter(ns);
+            writer.WriteLine("Valgmuligheder for denne server er HA for hent alle, HID for hent for fodboldspillerns id eller G for at gemme");
+            writer.Flush();
             string message = reader.ReadLine();
             string messageID = reader.ReadLine();
 
-            writer.WriteLine("Valgmuligheder for denne server er HA for hent alle, HID for hent for fodboldspillerns id eller G for at gemme");
+            
 
             if(message.ToUpper().StartsWith("HA"))
             {
@@ -54,12 +56,12 @@ namespace Opgave_5_TCP_server
                         writer.Flush();
                     }
                 }   
-            } else if(message.ToUpper() == "HID")
+            } else if(message.ToUpper().StartsWith("HID"))
             {
                 int id = -1;
-                if(int.TryParse(messageID, out id))
+                if (int.TryParse(messageID, out id))
                 {
-                    foreach(var players in footballPlayers)
+                    foreach (var players in footballPlayers)
                     {
                         if(players.Id == id)
                         {
